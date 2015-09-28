@@ -27,7 +27,6 @@ public class HibernateClient {
 			session = ServiceHibernate.currentSession();
 			// On passe une requ�te de type SQL mlais on travaille sur la
 			// classe
-			System.out.println("Je passe par la session");
 			Query query = session.createQuery("select p from Pays as p");
 			mesPays = query.list();
 		} catch (Exception ex) {
@@ -40,7 +39,7 @@ public class HibernateClient {
 		Pays pays = null;
 		try {
 			session = ServiceHibernate.currentSession();
-			Query query = session.createQuery("SELECT p  FROM Pays AS p where p.NOM_PAYS = " + nomPays);
+			Query query = session.createQuery("SELECT p FROM Pays AS p where p.nomPays = '" + nomPays + "'");
 			List<Pays> lesPays = query.list();
 			if (lesPays != null && lesPays.size() > 0) {
 				pays = lesPays.get(0);

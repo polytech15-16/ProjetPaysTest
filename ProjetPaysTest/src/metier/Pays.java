@@ -28,7 +28,6 @@ public class Pays implements java.io.Serializable {
 	}
 
 	@Id
-
 	@Column(name = "NOM_PAYS", unique = true, nullable = false, length = 100)
 	public String getNomPays() {
 		return this.nomPays;

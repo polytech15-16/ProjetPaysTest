@@ -10,7 +10,10 @@ public class WSPays implements IWSPays {
 	public String getCapitale(String pays) {
 		HibernateClient unGestClient = new HibernateClient();
 		Pays p = unGestClient.getUnPays(pays);
-		return p.getNomCapitale();
+		if (p != null) {
+			return p.getNomCapitale();
+		}
+		return null;
 	}
 
 	@Override
